@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import bodyParser from "body-parser";
 import authRoute from './routes/auth.js'
+import cardsRoute from './routes/cards.js'
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(
 );
 
 app.use("/server/auth", authRoute);
+app.use("/server/cards", cardsRoute);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
