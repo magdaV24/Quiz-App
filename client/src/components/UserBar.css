@@ -1,0 +1,22 @@
+.userbar{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: var(--tan);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.userbar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.userbar p{
+    font-size: 20px;
+    color: var(--background);
+}

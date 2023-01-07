@@ -1,0 +1,91 @@
+.create-page{
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-page section{
+    width: 80%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-page section .options{
+    position: fixed;
+    width: 80%;
+    height: 100px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-page section .options button{
+    width: 200px;
+    height: 100px;;
+    font: inherit;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid var(--tan);
+    background-color: var(--gold);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.multi-card-wrapper{
+    width: 600px;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 150px;
+    margin-left: 190px;
+    z-index: 2;
+    border: 3px double var(--gold);
+}
+
+.multi-card-wrapper .multi-card-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.multi-card-form label{
+    width: 600px;
+    height: 70px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.multi-card-form label span{
+    font-size: 20px;
+}
+
+.multi-card-form input{
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    outline: none;
+    background-color: transparent;
+    color: var(--gold);
+    font: inherit;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.multi-card-form button{
+    width: 90%;
+    height: 50px;
+    cursor: pointer;
+    background-color: var(--gold);
+    color: var(--background);
+    outline: none;
+    border: none;
+}

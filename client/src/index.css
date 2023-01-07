@@ -15,6 +15,14 @@ body{
   color: var(--gold);
 }
 
+body::-webkit-scrollbar {
+  width: .5em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+}
+
 a{
   text-decoration: none;
   color: inherit;

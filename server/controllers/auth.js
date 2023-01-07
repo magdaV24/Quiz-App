@@ -1,6 +1,5 @@
 import db from "../config/db.js";
 import bcrypt from "bcrypt";
-import { json } from "stream/consumers";
 import jwt from "jsonwebtoken";
 
 export const signin = (req, res) => {
@@ -64,7 +63,6 @@ export const login = (req, res) => {
     }).status(200).json(other);
   });
 };
-
 
 export const logout = (req, res) => {
   res.clearCookie("access_token", {
