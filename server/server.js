@@ -2,8 +2,8 @@ import express, { json } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import session from "express-session";
-import db from "./config/db.js";
 import bodyParser from "body-parser";
+import authRoute from './routes/auth.js'
 
 const app = express();
 
@@ -20,18 +20,21 @@ app.use(
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(
   session({
-    key: "userId",
+    name: "user",
     secret: "subscribe",
+    saveUninitialized: true,
     resave: false,
     cookie: {
-      expires: 60 * 60 * 24,
+      maxAge: 60 * 60 * 24,
     },
   })
 );
+
+app.use("/server/auth", authRoute);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);

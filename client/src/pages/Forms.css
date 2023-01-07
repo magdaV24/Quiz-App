@@ -57,14 +57,23 @@
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
-.form label input:active, 
+ 
 .form label input:focus{
     background-color: var(--tan);
 }
 
-.form label input:active + span, 
+.form label input:valid + span, 
 .form label input:focus + span{
     transform: translateY(-30px);
     font-size: 20px;
+}
+
+small{
+    margin-top: -30px;
+    width: 80%;
+    text-align: left;
+}
+
+small a{
+    color: darkred;
 }
