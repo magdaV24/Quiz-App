@@ -46,7 +46,7 @@ export default function Signin() {
   return (
     <div>
       <main>
-        <form className="form" onSubmit={(e) => handleSubmit(e)}>
+        <form className="form" onSubmit={handleSubmit}>
           <span>Create a new account!</span>
           <label>
             <input
