@@ -1,9 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useMultiCards = (categ, createdBy, limit) => {
+export const useMultiCards = (input) => {
 
     const [cards, setCards] = useState('')
+
+    const categ = input.categ;
+    const createdBy = input.createdBy;
+    const limit = input.limit;
 
     useEffect(() => {
         const fetchACard = async () => {
