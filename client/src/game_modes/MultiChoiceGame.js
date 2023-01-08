@@ -1,19 +1,19 @@
-import './MultiChoiceGame.css'
-import React, { useContext, useEffect, useState } from 'react'
-import { useMultiCards } from '../hooks/useMultiCards'
-import { AuthContext } from '../context/AuthContext'
-import axios from 'axios'
-import MultiCard from '../components/MultiCard'
+import "./MultiChoiceGame.css";
+import React, { useContext, useEffect, useState } from "react";
+import { useMultiCards } from "../hooks/useMultiCards";
+import { AuthContext } from "../context/AuthContext";
+import axios from "axios";
+import MultiCard from "../components/MultiCard";
 
 export default function MultiChoiceGame() {
-  const { currentUser} = useContext(AuthContext)
-  
+  const { currentUser } = useContext(AuthContext);
+
   // Getting the categories from the database.
 
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("");
-  const [limit, setLimit] = useState('')
-  const createdBy = currentUser.username
+  const [limit, setLimit] = useState("");
+  const createdBy = currentUser.username;
 
   useEffect(() => {
     const getCategs = async () => {
@@ -29,24 +29,24 @@ export default function MultiChoiceGame() {
     getCategs();
   }, []);
 
-  function getInput(){
+  function getInput() {
     return {
       categ: category,
       createdBy: createdBy,
-      limit: limit
-    }
+      limit: limit,
+    };
   }
 
   const handleClick = (e) => {
     e.preventDefault();
-    setInput(getInput())
-  }
-  
-  const [input, setInput] = useState(getInput)
+    setInput(getInput());
+  };
 
-  const cards = useMultiCards(input)
+  const [input, setInput] = useState(getInput);
+
+  const cards = useMultiCards(input);
   return (
-    <div className='multi-card-game'>
+    <div className="multi-card-game">
       <section className="categories">
         <span>Select a category:</span>
         <div className="map">
@@ -61,19 +61,22 @@ export default function MultiChoiceGame() {
               </button>
             ))}
         </div>
-        <section>
+        <section className="number-input">
           <span>How many questions?</span>
-          <input type='number' onChange={(e) => setLimit(e.target.value)} value={limit}/>
+          <input
+            type="number"
+            onChange={(e) => setLimit(e.target.value)}
+            value={limit}
+            min="1"
+          />
         </section>
       </section>
-      <section>
+      <section className="generate-btn">
         <button onClick={(e) => handleClick(e)}>Generate Test</button>
       </section>
-      <section className='multi-cards'>
-      {cards && cards.map(card => (
-        <MultiCard card={card} key={card.id} />
-      ))}
+      <section className="multi-cards">
+        {cards && cards.map((card) => <MultiCard card={card} key={card.id} />)}
       </section>
     </div>
-  )
+  );
 }
