@@ -31,7 +31,18 @@ export default function FlipCardGame() {
   const categ = category;
   const createdBy = currentUser.username;
 
-  let card = useFlipCards(categ, createdBy);
+  let cards = useFlipCards(categ, createdBy);
+  let len = cards.length;
+  function generateRandomIndex(){
+    return Math.floor(Math.random()*len);
+  }
+  
+  const [index, setIndex] = useState(generateRandomIndex())
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIndex(generateRandomIndex());
+  }
 
   return (
     <div className="flip-card-game">
@@ -51,12 +62,12 @@ export default function FlipCardGame() {
         </div>
       </section>
       <section className="card-section">
-        {card && (
-          <>
-            <FlipCard card={card[0]} />
-            <button>Another</button>
-          </>
-        )}
+          {cards && <>
+            <FlipCard card={cards[index]} />
+            <button 
+            onClick={(e) => handleClick(e)}
+            >Another</button>
+          </>}
       </section>
     </div>
   );

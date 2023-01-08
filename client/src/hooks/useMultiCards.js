@@ -1,21 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useFlipCards = (categ, createdBy) => {
-    
-  const [cards, setCards] = useState('')
+export const useMultiCards = (categ, createdBy, limit) => {
+
+    const [cards, setCards] = useState('')
 
     useEffect(() => {
         const fetchACard = async () => {
           try {
-            const res = await axios.get(`http://localhost:5000/server/cards/flip/${categ}/${createdBy}`);
+            const res = await axios.get(`http://localhost:5000/server/cards/multi/${categ}/${createdBy}/${limit}`);
             setCards(res.data);
           } catch (err) {
             console.log(err);
           }
         };
         fetchACard();
-      }, [categ, createdBy])
+      }, [categ, createdBy, limit])
 
       return cards
+
 }

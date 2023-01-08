@@ -7,5 +7,6 @@ router.post("/flip", createFlip)
 router.get("/flipCategs", getFlipCategs)
 router.get("/multiCategs", getMultiCategs)
 router.get("/flip/:categ/:createdBy", getRandomFlipCard)
+router.get("/multi/:categ/:createdBy/:limit", getRandomFlipCard)
 
 export default router

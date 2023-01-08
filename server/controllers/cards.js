@@ -85,7 +85,15 @@ export const getMultiCategs = (req, res) => {
 // Fetching a random number of multi-choice cards
 
 export const getRandomMultiCards = (req, res) => {
-  const q = `SELECT * FROM four_choices WHERE category = ${categ} ORDER BY RAND() LIMIT ${limit}`;
+    const limit = req.params.limit;
+    const categ = req.params.categ;
+    const createdBy = req.params.createdBy
+  const q = `SELECT * FROM four_choices WHERE category = "${categ}" AND createdBy = "${createdBy}"  ORDER BY RAND() LIMIT ${limit}`;
+
+  db.query(q, [categ, createdBy, limit], (err, result) => {
+    if(err) throw err
+    return res.status(200).json(result);
+  })
 };
 
 // Fetching the categories of the flip cards.
@@ -104,7 +112,7 @@ export const getFlipCategs = (req, res) => {
 export const getRandomFlipCard = (req, res) => {
   const categ = req.params.categ;
   const createdBy = req.params.createdBy
-  const q = `SELECT * FROM flip_cards WHERE category = "${categ}" AND createdBy = "${createdBy}" ORDER BY RAND() LIMIT 1`;
+  const q = `SELECT * FROM flip_cards WHERE category = "${categ}" AND createdBy = "${createdBy}"`;
 
   db.query(q, [categ, createdBy], (err, result) => {
     if (err) throw err;
