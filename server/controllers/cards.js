@@ -74,7 +74,8 @@ export const getFlipCards = (req, res) => {
 // Fetching the categories of the multi-choices cards.
 
 export const getMultiCategs = (req, res) => {
-  const q = "SELECT DISTINCT category FROM four_choices";
+  const createdBy = req.params.createdBy
+  const q = `SELECT DISTINCT category FROM four_choices WHERE createdBy = "${createdBy}"`;
 
   db.query(q, [req.query], (err, result) => {
     if (err) throw err;
@@ -99,7 +100,8 @@ export const getRandomMultiCards = (req, res) => {
 // Fetching the categories of the flip cards.
 
 export const getFlipCategs = (req, res) => {
-  const q = "SELECT DISTINCT category FROM flip_cards";
+  const createdBy = req.params.createdBy
+  const q = `SELECT DISTINCT category FROM flip_cards WHERE createdBy = "${createdBy}"`;
 
   db.query(q, [req.query], (err, result) => {
     if (err) throw err;

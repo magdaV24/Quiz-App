@@ -4,8 +4,8 @@ const router = express.Router()
 
 router.post("/multi", createMulti)
 router.post("/flip", createFlip)
-router.get("/flipCategs", getFlipCategs)
-router.get("/multiCategs", getMultiCategs)
+router.get("/flipCategs/:createdBy", getFlipCategs)
+router.get("/multiCategs/:createdBy", getMultiCategs)
 router.get("/flip/:categ/:createdBy", getRandomFlipCard)
 router.get("/multi/:categ/:createdBy/:limit", getRandomMultiCards)
 

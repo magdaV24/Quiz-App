@@ -11,12 +11,13 @@ export default function FlipCardGame() {
 
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("");
+  const createdBy = currentUser.username
 
   useEffect(() => {
     const getCategs = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/server/cards/flipCategs"
+          `http://localhost:5000/server/cards/flipCategs/${createdBy}`
         );
         setCategories(res.data);
       } catch (error) {
@@ -24,12 +25,11 @@ export default function FlipCardGame() {
       }
     };
     getCategs();
-  }, []);
+  }, [createdBy]);
 
   // Fetching one card from the database
 
   const categ = category;
-  const createdBy = currentUser.username;
 
   let cards = useFlipCards(categ, createdBy);
   let len = cards.length;

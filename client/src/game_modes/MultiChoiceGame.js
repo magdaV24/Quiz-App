@@ -19,7 +19,7 @@ export default function MultiChoiceGame() {
     const getCategs = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/server/cards/multiCategs"
+          `http://localhost:5000/server/cards/multiCategs/${createdBy}`
         );
         setCategories(res.data);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function MultiChoiceGame() {
       }
     };
     getCategs();
-  }, []);
+  }, [createdBy]);
 
   function getInput() {
     return {

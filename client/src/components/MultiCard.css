@@ -2,7 +2,6 @@
     width: 800px;
     height: 500px;
     border: 4px double var(--background);
-    background-color: var(--tan);
     color: var(--background);
     display: flex;
     flex-direction: column;

@@ -2,9 +2,11 @@
 
 :root{
   --background: rgb(18, 38, 32);
-  --light: #F4EBD0;
-  --gold: #D6AD60;
-  --tan: #B68D40;
+  --light: rgb(244, 235, 208);
+  --gold: rgb(214, 173, 96);
+  --tan: rgb(182, 141, 64);
+  --wrong: rgb(155,17,30);
+  --right: rgb(46,139,87);
 }
 
 body{
