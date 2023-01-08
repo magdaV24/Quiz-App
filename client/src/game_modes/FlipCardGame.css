@@ -1,0 +1,56 @@
+.flip-card-game{
+    width: 480px;
+    min-height: 400px;
+    border: 4px double var(--tan);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.flip-card-game .categories{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.flip-card-game .categories .map{
+    width: 100%;
+    min-height: 100px;
+    height: fit-content;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.flip-card-game .categories .map button{
+    width: 150px;
+    height: 50px;
+    outline: none;
+    border: 3px double var(--tan);
+    background-color: var(--light);
+    color: var(--background);
+    font: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.card-section button{
+    width: 478px;
+    height: 50px;
+    background-color: var(--gold);
+    border: 3px double var(--background);
+    color: var(--background);
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}

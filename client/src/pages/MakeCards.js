@@ -14,7 +14,6 @@ export default function MakeCards() {
   const [optionOne, setOptionOne] = useState("");
   const [optionTwo, setOptionTwo] = useState("");
   const [optionThree, setOptionThree] = useState("");
-  const [optionFour, setOptionFour] = useState("");
   const [answer, setAnswer] = useState("");
 
   const createMultiCard = async (e) => {
@@ -27,7 +26,6 @@ export default function MakeCards() {
           optionOne: optionOne,
           optionTwo: optionTwo,
           optionThree: optionThree,
-          optionFour: optionFour,
           answer: answer,
           categoryMulti: categoryMulti,
           createdBy: currentUser.username,
@@ -46,7 +44,6 @@ export default function MakeCards() {
     setOptionOne("");
     setOptionTwo("");
     setOptionThree("");
-    setOptionFour("");
   };
 
   const [categoryFlip, setCategoryFlip] = useState("");
@@ -130,14 +127,6 @@ export default function MakeCards() {
                 <input
                   onChange={(e) => setOptionThree(e.target.value)}
                   value={optionThree}
-                />
-              </label>
-
-              <label>
-                <span>Option 4:</span>
-                <input
-                  onChange={(e) => setOptionFour(e.target.value)}
-                  value={optionFour}
                 />
               </label>
 

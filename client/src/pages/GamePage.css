@@ -1,0 +1,52 @@
+.game-page{
+    width: 88vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-game{
+    width: 80vw;
+    min-height: 88vh;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.game-page .game-buttons{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.game-page .game-buttons span{
+    font-size: 20px;
+}
+
+.game-page .game-buttons .buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.game-page .game-buttons button{
+    width: 200px;
+    height: 70px;
+    background-color: transparent;
+    border: 3px double var(--tan);
+    color: var(--light);
+    font: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.game{
+    
+    width: 80vw;
+    min-height: 88vh;
+    margin-left: 250px;
+    padding: 20px;
+    margin-top: -600px;
+}
