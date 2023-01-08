@@ -43,24 +43,36 @@ export default function MultiCard({ card }) {
     e.preventDefault();
     setDecision(options[i[0]])
     setStyleOne({backgroundColor: 'var(--tan)'})
+    setStyleTwo({backgroundColor: 'var(--gold'})
+    setStyleThree({backgroundColor: 'var(--gold'})
+    setStyleFour({backgroundColor: 'var(--gold'})
   }
 
   const pickTwo = (e) => {
     e.preventDefault();
     setDecision(options[i[1]])
     setStyleTwo({backgroundColor: 'var(--tan)'})
+    setStyleOne({backgroundColor: 'var(--gold'})
+    setStyleThree({backgroundColor: 'var(--gold'})
+    setStyleFour({backgroundColor: 'var(--gold'})
   }
 
   const pickThree = (e) => {
     e.preventDefault();
     setDecision(options[i[2]])
     setStyleThree({backgroundColor: 'var(--tan)'})
+    setStyleTwo({backgroundColor: 'var(--gold'})
+    setStyleOne({backgroundColor: 'var(--gold'})
+    setStyleFour({backgroundColor: 'var(--gold'})
   }
 
   const pickFour = (e) => {
     e.preventDefault();
     setDecision(options[i[3]])
     setStyleFour({backgroundColor: 'var(--tan)'})
+    setStyleTwo({backgroundColor: 'var(--gold'})
+    setStyleThree({backgroundColor: 'var(--gold'})
+    setStyleOne({backgroundColor: 'var(--gold'})
   }
 
   return (
