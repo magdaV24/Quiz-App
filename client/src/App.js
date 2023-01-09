@@ -28,6 +28,9 @@ function App() {
           <Route path='/game'>
             <GamePage/>
           </Route>
+          <Route path='/user'>
+            <UserPage/>
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

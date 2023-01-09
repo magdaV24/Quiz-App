@@ -52,7 +52,8 @@ export const createFlip = (req, res) => {
 // Fetching the multi-choice cards.
 
 export const getMultiCards = (req, res) => {
-  const q = "SELECT * FROM four_choices";
+  const createdBy = req.params.createdBy
+  const q = `SELECT * FROM four_choices WHERE createdBy = "${createdBy}"`
 
   db.query(q, [req.query], (err, result) => {
     if (err) throw err;
@@ -63,7 +64,8 @@ export const getMultiCards = (req, res) => {
 // Fetching the flip cards.
 
 export const getFlipCards = (req, res) => {
-  const q = "SELECT * FROM flip_cards";
+  const createdBy = req.params.createdBy
+  const q = `SELECT * FROM flip_cards WHERE createdBy = "${createdBy}"`;
 
   db.query(q, [req.query], (err, result) => {
     if (err) throw err;
@@ -119,5 +121,29 @@ export const getRandomFlipCard = (req, res) => {
   db.query(q, [categ, createdBy], (err, result) => {
     if (err) throw err;
     return res.status(200).json(result);
+  });
+};
+
+// delete multi-cards
+
+export const deleteMulti = (req, res) => {
+  const id = req.params.id;
+  const q = `DELETE FROM four_choices WHERE id = ${id}`;
+
+  db.query(q, id, (err, result) => {
+    if (err) throw err;
+    res.send("Post has been deleted!");
+  });
+};
+
+// delete flip-cards
+
+export const deleteFlip = (req, res) => {
+  const id = req.params.id;
+  const q = `DELETE FROM flip_cards WHERE id = ${id}`;
+
+  db.query(q, id, (err, result) => {
+    if (err) throw err;
+    res.send("Post has been deleted!");
   });
 };
