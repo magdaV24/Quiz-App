@@ -5,6 +5,9 @@ import session from "express-session";
 import bodyParser from "body-parser";
 import authRoute from './routes/auth.js'
 import cardsRoute from './routes/cards.js'
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const app = express();
 
